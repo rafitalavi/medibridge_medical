@@ -1,0 +1,189 @@
+.services-section {
+  padding: 30px 0 95px;
+  background-color: var(--color-bg-main);
+}
+
+.services-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Section Header */
+.services-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 44px;
+  flex-wrap: wrap;
+}
+
+.services-header-left {
+  max-width: 620px;
+}
+
+.services-title {
+  font-family: var(--font-family-base);
+  font-size: clamp(2rem, 3.2vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--color-text-title);
+  margin-bottom: 10px;
+}
+
+.services-subtitle {
+  font-size: 1.05rem;
+  color: var(--color-text-body);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.services-header-right {
+  display: flex;
+  align-items: center;
+}
+
+.view-all-services-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--color-brand-primary);
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+  padding: 8px 0;
+}
+
+.view-all-services-link .link-chevron {
+  transition: transform var(--transition-normal);
+}
+
+.view-all-services-link:hover {
+  opacity: 0.85;
+}
+
+.view-all-services-link:hover .link-chevron {
+  transform: translateX(4px);
+}
+
+/* Cards Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* Service Card */
+.service-card {
+  background-color: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: 38px 32px;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  position: relative;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: #cbd5e1;
+  box-shadow: 0 20px 40px -12px rgba(15, 23, 42, 0.09), 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.service-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background-color: var(--color-bg-badge);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 26px;
+  transition: background-color var(--transition-fast);
+}
+
+.service-card:hover .service-icon-box {
+  background-color: var(--color-brand-glow);
+}
+
+.service-card-title {
+  font-family: var(--font-family-base);
+  font-size: 1.35rem;
+  font-weight: 750;
+  letter-spacing: -0.02em;
+  color: var(--color-text-title);
+  margin-bottom: 12px;
+}
+
+.service-card-desc {
+  font-size: 0.94rem;
+  line-height: 1.62;
+  color: var(--color-text-body);
+  margin-bottom: 28px;
+  min-height: 68px;
+}
+
+/* Checklist */
+.service-checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 18px;
+  border-top: 1px solid var(--color-border-light);
+  margin-top: auto;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checklist-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-brand-emerald);
+  flex-shrink: 0;
+}
+
+.checklist-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-nav);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .services-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .services-title {
+    font-size: 2rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .service-card {
+    padding: 30px 24px;
+  }
+
+  .service-card-desc {
+    min-height: auto;
+  }
+}

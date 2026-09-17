@@ -1,0 +1,67 @@
+:root {
+  /* Brand Color Palette (Extracted from User Theme) */
+  --color-brand-primary: #0c3f49;          /* Deep Medical Teal */
+  --color-brand-primary-hover: #082e36;    /* Darker Rich Teal */
+  --color-brand-primary-active: #051f25;
+  --color-brand-emerald: #00a76f;          /* Vibrant Emerald / Mint Accent */
+  --color-brand-emerald-hover: #008f5e;
+  --color-brand-emerald-light: #e6f7f0;
+  --color-brand-gold: #d5a145;             /* Warm Golden Amber for icons */
+  --color-brand-accent: #0c3f49;
+  --color-brand-glow: rgba(0, 167, 111, 0.15);
+
+  /* Neutrals & Surfaces */
+  --color-bg-main: #ffffff;
+  --color-bg-secondary: #f8fafb;
+  --color-bg-badge: #eef6f5;
+  --color-surface-card: #ffffff;
+  --color-surface-translucent: rgba(255, 255, 255, 0.95);
+
+  /* Top Bar */
+  --color-topbar-bg: #0c3f49;
+  --color-topbar-text: #e6e8ea;
+  --color-topbar-accent: #00a76f;
+
+  /* Typography */
+  --font-family-base: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --color-text-title: #0c2b32;
+  --color-text-body: #55696d;
+  --color-text-muted: #889da1;
+  --color-text-nav: #2c474d;
+  --color-text-nav-hover: #0c3f49;
+
+  /* Accents */
+  --color-success: #00a76f;
+  --color-success-bg: #e6f7f0;
+  --color-care-heart: #0c3f49;
+  --color-care-heart-bg: #eef6f5;
+
+  /* Borders */
+  --color-border: #dbe5e7;
+  --color-border-dark: #0c3f49;
+  --color-border-light: #edf3f4;
+
+  /* Spacing */
+  --container-max-width: 1280px;
+  --navbar-height: 80px;
+
+  /* Radii */
+  --radius-pill: 9999px;
+  --radius-3xl: 32px;
+  --radius-2xl: 24px;
+  --radius-xl: 18px;
+  --radius-lg: 14px;
+  --radius-md: 10px;
+
+  /* Elevations & Shadows */
+  --shadow-sm: 0 2px 5px rgba(12, 63, 73, 0.05);
+  --shadow-md: 0 8px 24px -4px rgba(12, 63, 73, 0.09);
+  --shadow-lg: 0 20px 42px -10px rgba(12, 63, 73, 0.14);
+  --shadow-floating-card: 0 25px 50px -12px rgba(12, 63, 73, 0.15), 0 4px 12px rgba(0, 0, 0, 0.04);
+  --shadow-btn-primary: 0 8px 22px -4px rgba(12, 63, 73, 0.4);
+
+  /* Transitions */
+  --transition-fast: 0.18s ease;
+  --transition-normal: 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-spring: 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}

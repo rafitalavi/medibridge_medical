@@ -1,0 +1,226 @@
+.footer-wrapper {
+  background-color: #062228;
+  color: #e6e8ea;
+  font-family: var(--font-family-base);
+  margin-top: 40px;
+}
+
+/* 1. Contact Strip matching user screenshot */
+.footer-contact-strip {
+  background-color: var(--color-topbar-bg, #0c3f49);
+  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-emerald-strip {
+  height: 3.5px;
+  background: linear-gradient(90deg, #00a76f 0%, #00d28d 50%, #00a76f 100%);
+  width: 100%;
+}
+
+.footer-contact-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 48px;
+}
+
+.footer-contact-left,
+.footer-contact-right {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.footer-contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #e6e8ea;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color var(--transition-fast), opacity var(--transition-fast);
+}
+
+.footer-contact-item:hover {
+  color: #ffffff;
+  opacity: 0.95;
+}
+
+.contact-icon-gold {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-text {
+  letter-spacing: -0.01em;
+}
+
+/* 2. Main Footer */
+.footer-main {
+  padding: 64px 0 48px;
+}
+
+.footer-main-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.3fr;
+  gap: 48px;
+}
+
+/* Brand Column */
+.footer-logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.footer-brand-name {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+}
+
+.emerald-text {
+  color: #00a76f;
+}
+
+.footer-brand-desc {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: #94a9ad;
+  margin-bottom: 22px;
+  max-width: 360px;
+}
+
+.footer-support-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(0, 167, 111, 0.1);
+  border: 1px solid rgba(0, 167, 111, 0.25);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #00d28d;
+}
+
+/* Links Columns */
+.footer-col-title {
+  font-size: 1rem;
+  font-weight: 750;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  margin-bottom: 20px;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links a {
+  font-size: 0.88rem;
+  color: #94a9ad;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+  display: inline-block;
+}
+
+.footer-links a:hover {
+  color: #00a76f;
+  transform: translateX(3px);
+}
+
+/* CTA Column */
+.footer-cta-text {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: #94a9ad;
+  margin-bottom: 18px;
+}
+
+.footer-cta-btn {
+  background-color: #00a76f;
+  color: #ffffff;
+  padding: 12px 22px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(0, 167, 111, 0.3);
+  transition: all var(--transition-normal);
+}
+
+.footer-cta-btn:hover {
+  background-color: #008f5e;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 167, 111, 0.45);
+}
+
+/* 3. Footer Bottom */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 24px 0;
+  background-color: #04171b;
+}
+
+.footer-bottom-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.footer-copyright {
+  font-size: 0.82rem;
+  color: #72898d;
+}
+
+.footer-disclaimer {
+  font-size: 0.76rem;
+  color: #556c70;
+  max-width: 580px;
+  line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .footer-main-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-contact-container {
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .footer-contact-left {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .footer-main-container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer-bottom-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
