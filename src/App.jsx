@@ -10,6 +10,7 @@ import ServicesPage from './pages/ServicesPage/ServicesPage';
 import DestinationsPage from './pages/DestinationsPage/DestinationsPage';
 import ConsultationModal from './components/ConsultationModal/ConsultationModal';
 import HowItWorksModal from './components/HowItWorksModal/HowItWorksModal';
+import WhatsAppButton from './components/WhatsAppButton/WhatsAppButton';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -138,6 +139,9 @@ export default function App() {
         onClose={() => setIsHowItWorksOpen(false)}
         onProceedToConsultation={handleOpenGeneralConsultation}
       />
+
+      {/* Floating WhatsApp Action Button */}
+      <WhatsAppButton />
     </div>
   );
 }
