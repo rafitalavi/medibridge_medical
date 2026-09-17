@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail, MapPin, ArrowRight, ShieldCheck, Heart } from 'lucide-react';
+import { Phone, Mail, MapPin, ArrowRight, ShieldCheck } from 'lucide-react';
 import Logo from '../common/Logo';
 import './Footer.css';
 
@@ -42,14 +42,11 @@ export default function Footer({ onOpenConsultation }) {
         <div className="container footer-main-container">
           {/* Brand Column */}
           <div className="footer-col footer-col-brand">
-            <div className="footer-logo-wrap">
-              <Logo size={36} showText={false} />
-              <span className="footer-brand-name">
-                Medic<span className="emerald-text">Visa</span>
-              </span>
+            <div className="footer-logo-wrap" style={{ marginBottom: '16px' }}>
+              <Logo size={42} showText={true} showTagline={true} isDarkBg={true} />
             </div>
             <p className="footer-brand-desc">
-              Your trusted partner for international medical travel, hospital coordination, and expedited medical visa assistance. Connecting patients in Bangladesh and worldwide to top-tier healthcare.
+              Bridging you to world-class treatment. Your trusted partner for international medical travel, hospital coordination, and expedited medical visa assistance.
             </p>
             <div className="footer-support-badge">
               <ShieldCheck size={16} color="#00a76f" />
@@ -61,7 +58,7 @@ export default function Footer({ onOpenConsultation }) {
           <div className="footer-col">
             <h4 className="footer-col-title">Quick Links</h4>
             <ul className="footer-links">
-              <li><a href="#about">About MedicVisa</a></li>
+              <li><a href="#about">About MediBridge</a></li>
               <li><a href="#services">Our Services</a></li>
               <li><a href="#how-it-works">How It Works</a></li>
               <li><a href="#treatments">Specialist Treatments</a></li>
@@ -103,10 +100,10 @@ export default function Footer({ onOpenConsultation }) {
       <div className="footer-bottom">
         <div className="container footer-bottom-container">
           <p className="footer-copyright">
-            © {new Date().getFullYear()} MedicVisa / MediBridge Travel. All rights reserved.
+            © {new Date().getFullYear()} MediBridge (Travel to Heal). All rights reserved.
           </p>
           <p className="footer-disclaimer">
-            MedicVisa facilitates logistics, hospital appointments, and visa documentation. We do not provide direct medical advice or clinical diagnosis.
+            MediBridge facilitates medical travel logistics, hospital appointments, and visa documentation. We do not provide direct medical advice or clinical diagnosis.
           </p>
         </div>
       </div>

@@ -67,7 +67,7 @@ export default function App() {
   };
 
   return (
-    <div className="medic-visa-app">
+    <div className="medibridge-app">
       {/* Clean Main Navigation Bar (Header) */}
       <Navbar
         currentPage={currentPage}

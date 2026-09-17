@@ -9,7 +9,7 @@ export default function AboutOverview() {
           Bridging the Gap in Global Healthcare
         </h2>
         <p className="about-overview-text">
-          MedicVisa is a professional international support platform dedicated to helping
+          MediBridge is a professional international support platform dedicated to helping
           patients access world-class treatment without the stress of logistics. We act
           as your trusted guide, coordinator, and bridge between your current location and
           international treatment access.

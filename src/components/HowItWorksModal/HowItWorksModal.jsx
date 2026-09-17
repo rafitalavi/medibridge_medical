@@ -70,7 +70,7 @@ export default function HowItWorksModal({ isOpen, onClose, onProceedToConsultati
           <div className="how-header">
             <span className="how-badge">Seamless 4-Step Process</span>
             <h2 id="how-it-works-title" className="how-title">
-              How MedicVisa Guides Your Care
+              How MediBridge Guides Your Care
             </h2>
             <p className="how-subtitle">
               From your initial inquiry to full recovery back home, we eliminate administrative stress so you can focus on healing.

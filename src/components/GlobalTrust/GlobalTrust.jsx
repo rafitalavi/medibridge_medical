@@ -73,7 +73,7 @@ export default function GlobalTrust() {
 
             {/* Patient Testimonial Quote */}
             <blockquote className="trust-quote">
-              "MedicVisa made what seemed impossible feel completely manageable. They handled my medical visa and coordinated my travel with such professionalism and care."
+              "MediBridge made what seemed impossible feel completely manageable. They handled my medical visa and coordinated my travel with such professionalism and care."
             </blockquote>
 
             {/* Patient Signature */}

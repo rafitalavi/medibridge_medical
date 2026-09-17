@@ -24,7 +24,7 @@ export default function Hero({ onOpenConsultation, onOpenHowItWorks }) {
 
           {/* Subtitle */}
           <p className="hero-description">
-            MedicVisa helps patients and families navigate medical travel, treatment
+            MediBridge helps patients and families navigate medical travel, treatment
             coordination, and visa support with clarity, professionalism, and peace of mind.
           </p>
 

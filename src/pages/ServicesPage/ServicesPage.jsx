@@ -79,7 +79,7 @@ export default function ServicesPage({ onEnquire }) {
         <div className="container">
           <h1 className="services-page-title">Our Core Support Services</h1>
           <p className="services-page-subtitle">
-            MedicVisa provides end-to-end guidance for international medical travel,
+            MediBridge provides end-to-end guidance for international medical travel,
             ensuring every administrative and logistical detail is professionally managed.
           </p>
         </div>
