@@ -8,19 +8,19 @@ export default function ConsultationModal({ isOpen, onClose, initialSpecialty = 
     email: '',
     phone: '',
     treatment: 'Cardiology',
-    destination: 'Germany',
+    destination: 'China',
     notes: '',
   });
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
     let prefilledNotes = '';
-    let dest = 'Germany';
+    let dest = 'China';
 
     if (initialDestination) {
-      if (initialDestination.includes('Turkey')) dest = 'Turkey';
-      else if (initialDestination.includes('UAE')) dest = 'UAE';
-      else if (initialDestination.includes('Germany')) dest = 'Germany';
+      if (initialDestination.includes('Malaysia')) dest = 'Turkey';
+      else if (initialDestination.includes('Thailand')) dest = 'UAE';
+      else if (initialDestination.includes('China')) dest = 'Germany';
       prefilledNotes = `Inquiring for medical travel to ${initialDestination}`;
     }
 
@@ -178,13 +178,10 @@ export default function ConsultationModal({ isOpen, onClose, initialSpecialty = 
                     value={formData.destination}
                     onChange={handleChange}
                   >
-                    <option value="Germany">Germany</option>
-                    <option value="Turkey">Turkey</option>
+                    <option value="China">China</option>
+                    <option value="Malaysia">Malaysia</option>
                     <option value="Thailand">Thailand</option>
-                    <option value="India">India</option>
-                    <option value="Singapore">Singapore</option>
-                    <option value="UAE">United Arab Emirates</option>
-                    <option value="United States">United States</option>
+
                   </select>
                 </div>
               </div>
