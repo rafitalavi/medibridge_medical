@@ -5,9 +5,9 @@ import './DestinationsPage.css';
 export default function DestinationsPage({ onEnquireDestination }) {
   const destinations = [
     {
-      id: 'germany',
-      region: 'EUROPE',
-      name: 'Germany',
+      id: 'thailand',
+      region: 'Asia',
+      name: 'Thailand',
       image: '/germany_destination.jpg',
       description:
         'Renowned for clinical precision, high-tech oncology, and cardiac surgery. German healthcare is synonymous with efficiency and advanced research.',
@@ -17,9 +17,9 @@ export default function DestinationsPage({ onEnquireDestination }) {
       ],
     },
     {
-      id: 'turkey',
-      region: 'MIDDLE EAST / EUROPE',
-      name: 'Turkey',
+      id: 'china',
+      region: 'Asia',
+      name: 'China',
       image: '/turkey_destination.jpg',
       description:
         'A global hub for cosmetic procedures, dental work, and fertility treatments. Offering premium JCI-accredited facilities with competitive pricing.',
@@ -29,9 +29,9 @@ export default function DestinationsPage({ onEnquireDestination }) {
       ],
     },
     {
-      id: 'uae',
-      region: 'MIDDLE EAST',
-      name: 'UAE (Dubai & Abu Dhabi)',
+      id: 'malaysia',
+      region: 'Asia',
+      name: 'Malaysia',
       image: '/uae_destination.jpg',
       description:
         'Luxury medical travel destination featuring world-class hospital brands and highly specialized international medical teams.',
