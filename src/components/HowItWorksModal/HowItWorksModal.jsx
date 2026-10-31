@@ -36,12 +36,18 @@ export default function HowItWorksModal({ isOpen, onClose, onProceedToConsultati
     },
     {
       num: '03',
+      title: 'Online Hospital Communications',
+      desc: 'We arrange direct video consultations between you and the specialist to finalize treatment.',
+      icon: <Plane size={22} color="#0f3b5c" />,
+    },
+    {
+      num: '04',
       title: 'Priority Medical Visa',
       desc: 'We prepare government-compliant medical visa invitations, expediting approvals in as fast as 48 hours.',
       icon: <Plane size={22} color="#0f3b5c" />,
     },
     {
-      num: '04',
+      num: '05',
       title: 'Bedside Care & Return',
       desc: 'Airport transfer, translation assistance, and a dedicated personal care coordinator with you every step.',
       icon: <HeartHandshake size={22} color="#0f3b5c" />,
