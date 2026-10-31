@@ -3,8 +3,8 @@ import './WhatsAppButton.css';
 
 export default function WhatsAppButton() {
   const [isHovered, setIsHovered] = useState(false);
-  const phoneNumber = '8801631381077';
-  const displayPhone = '01631-381077';
+  const phoneNumber = '8801805209666';
+  const displayPhone = '01805209666';
   const defaultMessage = encodeURIComponent(
     'Hello MediBridge, I would like to inquire about medical travel, hospital coordination, and visa support.'
   );
