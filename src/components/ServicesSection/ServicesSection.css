@@ -78,7 +78,8 @@
   background-color: #ffffff;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-2xl);
-  padding: 38px 32px;
+  overflow: hidden;
+  padding: 0;
   display: flex;
   flex-direction: column;
   transition: all var(--transition-normal);
@@ -88,41 +89,109 @@
 
 .service-card:hover {
   transform: translateY(-6px);
-  border-color: #cbd5e1;
-  box-shadow: 0 20px 40px -12px rgba(15, 23, 42, 0.09), 0 4px 12px rgba(0, 0, 0, 0.02);
+  border-color: var(--color-brand-emerald);
+  box-shadow: 0 20px 40px -12px rgba(12, 63, 73, 0.12), 0 4px 12px rgba(0, 0, 0, 0.03);
 }
 
-.service-icon-box {
-  width: 52px;
-  height: 52px;
-  border-radius: 14px;
-  background-color: var(--color-bg-badge);
+/* Card Image Header */
+.service-card-image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: var(--color-bg-secondary);
+}
+
+.service-card-image-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(12, 63, 73, 0.12) 0%, rgba(12, 63, 73, 0) 40%, rgba(12, 63, 73, 0.2) 100%);
+  pointer-events: none;
+}
+
+.service-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.service-card:hover .service-card-image {
+  transform: scale(1.06);
+}
+
+/* Category Badge on Image */
+.service-card-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 0.72rem;
+  font-weight: 750;
+  color: var(--color-brand-primary);
+  letter-spacing: 0.04em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+/* Floating Icon Box overlay on bottom-right of image */
+.service-card-icon-overlay {
+  position: absolute;
+  bottom: 12px;
+  right: 14px;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 26px;
-  transition: background-color var(--transition-fast);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  transition: all var(--transition-fast);
 }
 
-.service-card:hover .service-icon-box {
-  background-color: var(--color-brand-glow);
+.service-card:hover .service-card-icon-overlay {
+  background-color: var(--color-brand-primary);
+  transform: scale(1.05);
+}
+
+.service-card:hover .service-card-icon-overlay svg {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+/* Card Body */
+.service-card-body {
+  padding: 24px 26px 26px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .service-card-title {
   font-family: var(--font-family-base);
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   font-weight: 750;
   letter-spacing: -0.02em;
   color: var(--color-text-title);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .service-card-desc {
-  font-size: 0.94rem;
-  line-height: 1.62;
+  font-size: 0.92rem;
+  line-height: 1.6;
   color: var(--color-text-body);
-  margin-bottom: 28px;
-  min-height: 68px;
+  margin-bottom: 22px;
+  min-height: 64px;
 }
 
 /* Checklist */
@@ -130,7 +199,7 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 11px;
   padding-top: 18px;
   border-top: 1px solid var(--color-border-light);
   margin-top: auto;
@@ -151,9 +220,41 @@
 }
 
 .checklist-text {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 600;
   color: var(--color-text-nav);
+}
+
+/* Card Footer Action */
+.service-card-footer {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.service-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-brand-primary);
+  transition: color var(--transition-fast);
+}
+
+.service-cta-arrow {
+  transition: transform var(--transition-fast);
+}
+
+.service-card:hover .service-card-cta {
+  color: var(--color-brand-emerald);
+}
+
+.service-card:hover .service-cta-arrow {
+  transform: translateX(4px);
 }
 
 /* Responsive */
@@ -176,11 +277,11 @@
 
   .services-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 24px;
   }
 
-  .service-card {
-    padding: 30px 24px;
+  .service-card-body {
+    padding: 22px 20px 22px;
   }
 
   .service-card-desc {

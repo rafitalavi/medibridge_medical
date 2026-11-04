@@ -6,7 +6,9 @@ export default function ServicesSection({ onSelectService, onNavigateToServicesP
   const services = [
     {
       id: 'visa',
-      icon: <FileText size={24} strokeWidth={2} color="#0c3f49" />,
+      image: '/medical_desk.jpg',
+      badge: 'Visa Support',
+      icon: <FileText size={22} strokeWidth={2} color="#0c3f49" />,
       title: 'Medical Visa Support',
       description:
         'Expert guidance through complex documentation and application processes for international health travel.',
@@ -18,7 +20,9 @@ export default function ServicesSection({ onSelectService, onNavigateToServicesP
     },
     {
       id: 'travel',
-      icon: <Globe size={24} strokeWidth={2} color="#0c3f49" />,
+      image: '/travel_coordination.jpg',
+      badge: 'Travel Logistics',
+      icon: <Globe size={22} strokeWidth={2} color="#0c3f49" />,
       title: 'Travel Coordination',
       description:
         'Full-scale logistical planning for patients and family members, from flights to specialized transport.',
@@ -30,7 +34,9 @@ export default function ServicesSection({ onSelectService, onNavigateToServicesP
     },
     {
       id: 'treatment',
-      icon: <Calendar size={24} strokeWidth={2} color="#0c3f49" />,
+      image: '/hospital_building.jpg',
+      badge: 'Clinical Care',
+      icon: <Calendar size={22} strokeWidth={2} color="#0c3f49" />,
       title: 'Treatment Journey',
       description:
         'Direct coordination with international clinics and hospitals to secure appointments and clear pathways.',
@@ -48,7 +54,7 @@ export default function ServicesSection({ onSelectService, onNavigateToServicesP
         {/* Header with Title and "View All Services" link */}
         <div className="services-header">
           <div className="services-header-left">
-            <h2 className="services-title">Support Every Step of the Way</h2>
+            <h2 className="services-title">How Can We Help You?</h2>
             <p className="services-subtitle">
               Comprehensive guidance tailored to your specific medical and travel needs.
             </p>
@@ -79,25 +85,54 @@ export default function ServicesSection({ onSelectService, onNavigateToServicesP
             <div
               key={service.id}
               className="service-card"
+              role="button"
+              tabIndex={0}
               onClick={() => onSelectService && onSelectService(service.id)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  onSelectService && onSelectService(service.id);
+                }
+              }}
             >
-              <div className="service-icon-box" aria-hidden="true">
-                {service.icon}
+              {/* Card Image Header */}
+              <div className="service-card-image-wrap">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="service-card-image"
+                  loading="lazy"
+                />
+                <span className="service-card-badge">{service.badge}</span>
+                <div className="service-card-icon-overlay" aria-hidden="true">
+                  {service.icon}
+                </div>
               </div>
 
-              <h3 className="service-card-title">{service.title}</h3>
-              <p className="service-card-desc">{service.description}</p>
+              {/* Card Body */}
+              <div className="service-card-body">
+                <h3 className="service-card-title">{service.title}</h3>
+                <p className="service-card-desc">{service.description}</p>
 
-              <ul className="service-checklist">
-                {service.checklist.map((item, idx) => (
-                  <li key={idx} className="checklist-item">
-                    <span className="checklist-icon" aria-hidden="true">
-                      <CheckCircle2 size={16} strokeWidth={2} />
-                    </span>
-                    <span className="checklist-text">{item}</span>
-                  </li>
-                ))}
-              </ul>
+                <ul className="service-checklist">
+                  {service.checklist.map((item, idx) => (
+                    <li key={idx} className="checklist-item">
+                      <span className="checklist-icon" aria-hidden="true">
+                        <CheckCircle2 size={16} strokeWidth={2} />
+                      </span>
+                      <span className="checklist-text">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Card Footer Action */}
+                <div className="service-card-footer">
+                  <span className="service-card-cta">
+                    <span>Learn More</span>
+                    <ChevronRight size={16} strokeWidth={2.5} className="service-cta-arrow" />
+                  </span>
+                </div>
+              </div>
             </div>
           ))}
         </div>
