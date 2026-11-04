@@ -18,13 +18,14 @@ export default function Hero({ onOpenConsultation, onOpenHowItWorks }) {
 
           {/* Headline */}
           <h1 className="hero-title">
-            Medical Travel Assistance & Patient Navigation Partner
+            Better Care. Beyond Borders.
+            <span className="block text-green-600">The Right Care for Every Budget.</span>
           </h1>
 
           {/* Subtitle */}
           <p className="hero-description">
             MediBridge helps patients and families navigate medical travel, treatment
-            coordination, and visa support with clarity, professionalism, and peace of mind.
+            coordination, and visa support with clarity, professionalism, and peace of mind.Connecting people worldwide to healthcare opportunities through trusted medical travel assistance,hospital coordination and personalized patient
           </p>
 
           {/* Action Buttons */}
