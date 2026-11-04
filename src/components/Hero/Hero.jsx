@@ -18,8 +18,7 @@ export default function Hero({ onOpenConsultation, onOpenHowItWorks }) {
 
           {/* Headline */}
           <h1 className="hero-title">
-            Trusted Medical Travel and{' '}
-            <span className="hero-title-highlight">Visa Support</span>, Guided with Care
+            Medical Travel Assistance & Patient Navigation Partner
           </h1>
 
           {/* Subtitle */}
