@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function Logo({
-  size = 44,
+  size = 52,
   showText = true,
   showTagline = true,
   isDarkBg = false,
@@ -17,7 +17,7 @@ export default function Logo({
       style={{
         display: 'inline-flex',
         alignItems: 'center',
-        gap: '12px',
+        gap: `${Math.max(12, Math.round(size * 0.24))}px`,
         textDecoration: 'none',
       }}
     >
@@ -69,7 +69,7 @@ export default function Logo({
               style={{
                 fontFamily: 'var(--font-family-base)',
                 fontWeight: 900,
-                fontSize: `${size * 0.44}px`,
+                fontSize: `${Math.round(size * 0.46)}px`,
                 letterSpacing: '-0.02em',
                 color: primaryColor,
                 userSelect: 'none',
@@ -81,7 +81,7 @@ export default function Logo({
               style={{
                 fontFamily: 'var(--font-family-base)',
                 fontWeight: 900,
-                fontSize: `${size * 0.44}px`,
+                fontSize: `${Math.round(size * 0.46)}px`,
                 letterSpacing: '-0.02em',
                 color: '#d5a145',
                 userSelect: 'none',
@@ -96,10 +96,10 @@ export default function Logo({
               style={{
                 fontFamily: 'var(--font-family-base)',
                 fontWeight: 600,
-                fontSize: `${Math.max(size * 0.22, 10)}px`,
+                fontSize: `${Math.max(Math.round(size * 0.22), 11)}px`,
                 letterSpacing: '0.14em',
                 color: taglineColor,
-                marginTop: '3px',
+                marginTop: `${Math.max(3, Math.round(size * 0.06))}px`,
                 textTransform: 'uppercase',
                 userSelect: 'none',
               }}

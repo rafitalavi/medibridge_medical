@@ -43,7 +43,7 @@ export default function Footer({ onOpenConsultation }) {
           {/* Brand Column */}
           <div className="footer-col footer-col-brand">
             <div className="footer-logo-wrap" style={{ marginBottom: '16px' }}>
-              <Logo size={42} showText={true} showTagline={true} isDarkBg={true} />
+              <Logo size={50} showText={true} showTagline={true} isDarkBg={true} />
             </div>
             <p className="footer-brand-desc">
               Bridging you to world-class treatment. Your trusted partner for international medical travel, hospital coordination, and expedited medical visa assistance.

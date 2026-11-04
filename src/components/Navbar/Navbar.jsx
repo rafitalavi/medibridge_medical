@@ -43,10 +43,10 @@ export default function Navbar({ currentPage = 'home', onNavigate, onOpenConsult
         <a
           href="#home"
           className="navbar-brand"
-          aria-label="MedicVisa Homepage"
+          aria-label="MediBridge Homepage"
           onClick={(e) => handleNav('home', e)}
         >
-          <Logo size={36} />
+          <Logo size={52} />
         </a>
 
         {/* Desktop Navigation Links */}
