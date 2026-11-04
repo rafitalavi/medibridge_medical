@@ -63,6 +63,20 @@
   margin-bottom: 22px;
 }
 
+
+/* Subtitle within Headline */
+.hero-subtitle,
+.hero-title .hero-subtitle,
+.hero-title .text-green-600 {
+  display: block;
+  font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+  font-weight: 700;
+  line-height: 1.35;
+  color: #16a34a;
+  margin-top: 12px;
+  letter-spacing: -0.015em;
+}
+
 .hero-title-highlight {
   font-style: italic;
   font-weight: 800;

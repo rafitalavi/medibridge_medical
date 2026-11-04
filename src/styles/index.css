@@ -137,3 +137,12 @@ button {
     transform: scale(1.04);
   }
 }
+
+/* Utility Helpers */
+.block {
+  display: block;
+}
+
+.text-green-600 {
+  color: #16a34a;
+}
