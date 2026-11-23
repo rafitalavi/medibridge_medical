@@ -1,15 +1,49 @@
 import React from 'react';
+import logoMarkLight from '../../assets/logo-mark.png';
+import logoMarkDark from '../../assets/logo-mark-dark.png';
+import logoFullLight from '../../assets/logo.png';
+import logoFullDark from '../../assets/logo-dark.png';
 
 export default function Logo({
   size = 52,
   showText = true,
   showTagline = true,
   isDarkBg = false,
+  layout = 'horizontal', // 'horizontal' | 'stacked'
   className = '',
 }) {
-  const primaryColor = isDarkBg ? '#ffffff' : '#0c3f49';
-  const tubeColor = isDarkBg ? '#dbe5e7' : '#263b40';
-  const taglineColor = isDarkBg ? '#cbd7d9' : '#55696d';
+  const primaryTeal = isDarkBg ? '#ffffff' : '#05686D';
+  const brandGold = '#EDB141';
+  const taglineColor = isDarkBg ? '#a4c2c6' : '#05686D';
+
+  const markSrc = isDarkBg ? logoMarkDark : logoMarkLight;
+  const fullLogoSrc = isDarkBg ? logoFullDark : logoFullLight;
+
+  if (layout === 'stacked' || layout === 'full') {
+    return (
+      <div
+        className={`medibridge-logo-stacked ${className}`}
+        style={{ display: 'inline-flex', alignItems: 'center' }}
+      >
+        <img
+          src={fullLogoSrc}
+          alt="MediBridge - Travel to Heal"
+          style={{
+            height: `${size}px`,
+            width: 'auto',
+            objectFit: 'contain',
+            display: 'block',
+          }}
+          loading="eager"
+        />
+      </div>
+    );
+  }
+
+  // Horizontal Layout: Mark on left + MEDIBRIDGE text & tagline on right
+  const markHeight = size;
+  // Aspect ratio of the emblem mark is approximately 199 / 239 (~0.83)
+  const markWidth = Math.round(markHeight * 0.83);
 
   return (
     <div
@@ -17,61 +51,35 @@ export default function Logo({
       style={{
         display: 'inline-flex',
         alignItems: 'center',
-        gap: `${Math.max(12, Math.round(size * 0.24))}px`,
+        gap: `${Math.max(10, Math.round(size * 0.22))}px`,
         textDecoration: 'none',
       }}
     >
-      {/* SVG Icon matching the banner exactly */}
-      <svg
-        width={size}
-        height={size}
-        viewBox="0 0 100 100"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        style={{ flexShrink: 0 }}
-        aria-label="MediBridge Logo"
-      >
-        {/* Left arm & top-left vertical arm */}
-        <rect x="22" y="44" width="26" height="12" rx="2" fill={primaryColor} />
-        <rect x="36" y="30" width="12" height="14" rx="2" fill={primaryColor} />
+      {/* Official Stethoscope & Medical Cross Emblem */}
+      <img
+        src={markSrc}
+        alt="MediBridge Emblem"
+        style={{
+          height: `${markHeight}px`,
+          width: `${markWidth}px`,
+          objectFit: 'contain',
+          flexShrink: 0,
+          display: 'block',
+        }}
+        loading="eager"
+      />
 
-        {/* Golden Amber Modular Bridge Blocks */}
-        {/* Top-right vertical block */}
-        <rect x="50" y="30" width="12" height="14" rx="2" fill="#d5a145" />
-        {/* Right horizontal arm */}
-        <rect x="50" y="44" width="18" height="12" rx="2" fill="#d5a145" />
-        {/* Bottom-left vertical block */}
-        <rect x="36" y="58" width="12" height="14" rx="2" fill="#d5a145" />
-        {/* Bottom-right vertical block */}
-        <rect x="50" y="58" width="12" height="14" rx="2" fill="#d5a145" />
-
-        {/* Stethoscope Tubing - curves under left arm, loops high above cross, connects to chestpiece */}
-        <path
-          d="M 22 54 C 23 63 36 67 47 62 C 49 61 50 56 50 48 L 50 24 C 50 12 60 7 69 11 C 77 15 80 25 78 35 C 76 43 72 50 68 54"
-          fill="none"
-          stroke={tubeColor}
-          strokeWidth="3.2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-
-        {/* Stethoscope Chestpiece / Diaphragm */}
-        <circle cx="68" cy="55" r="7.5" fill={isDarkBg ? '#0c3f49' : '#ffffff'} stroke={tubeColor} strokeWidth="3" />
-        <circle cx="68" cy="55" r="4.5" fill="#d5a145" />
-        <circle cx="68" cy="55" r="1.8" fill="#ffffff" />
-      </svg>
-
-      {/* Brand Typography */}
+      {/* Brand Typography matching official logo */}
       {showText && (
         <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1 }}>
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <span
               style={{
-                fontFamily: 'var(--font-family-base)',
-                fontWeight: 900,
-                fontSize: `${Math.round(size * 0.46)}px`,
+                fontFamily: 'var(--font-family-base, sans-serif)',
+                fontWeight: 800,
+                fontSize: `${Math.round(size * 0.44)}px`,
                 letterSpacing: '-0.02em',
-                color: primaryColor,
+                color: primaryTeal,
                 userSelect: 'none',
               }}
             >
@@ -79,11 +87,11 @@ export default function Logo({
             </span>
             <span
               style={{
-                fontFamily: 'var(--font-family-base)',
-                fontWeight: 900,
-                fontSize: `${Math.round(size * 0.46)}px`,
+                fontFamily: 'var(--font-family-base, sans-serif)',
+                fontWeight: 800,
+                fontSize: `${Math.round(size * 0.44)}px`,
                 letterSpacing: '-0.02em',
-                color: '#d5a145',
+                color: brandGold,
                 userSelect: 'none',
               }}
             >
@@ -94,14 +102,15 @@ export default function Logo({
           {showTagline && (
             <span
               style={{
-                fontFamily: 'var(--font-family-base)',
+                fontFamily: 'var(--font-family-base, sans-serif)',
                 fontWeight: 600,
-                fontSize: `${Math.max(Math.round(size * 0.22), 11)}px`,
-                letterSpacing: '0.14em',
+                fontSize: `${Math.max(Math.round(size * 0.19), 10)}px`,
+                letterSpacing: '0.18em',
                 color: taglineColor,
-                marginTop: `${Math.max(3, Math.round(size * 0.06))}px`,
+                marginTop: `${Math.max(3, Math.round(size * 0.08))}px`,
                 textTransform: 'uppercase',
                 userSelect: 'none',
+                opacity: isDarkBg ? 0.9 : 0.85,
               }}
             >
               Travel to Heal
